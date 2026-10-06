@@ -5,29 +5,29 @@
 
 # Paylo
 
-Safe JSON templates with explicit variables, preserved value types and clear missing-variable errors.
+Plantillas JSON con variables explícitas, conservación de tipos y errores claros cuando falta una variable.
 
 [![CI](https://github.com/angel-valdezzz/robotframework-paylo/actions/workflows/ci.yml/badge.svg)](https://github.com/angel-valdezzz/robotframework-paylo/actions/workflows/ci.yml)
 [![PyPI](https://img.shields.io/pypi/v/robotframework-paylo)](https://pypi.org/project/robotframework-paylo/)
 
-**English** · [Español](README.es.md)
+[English](README.md) · **Español**
 
-[User guide ↗](https://angel-valdezzz.github.io/robotframework-paylo/) · [Keyword reference ↗](https://angel-valdezzz.github.io/robotframework-paylo/keywords/index.html) · [PyPI ↗](https://pypi.org/project/robotframework-paylo/) · [Live examples ↗](https://angel-valdezzz.github.io/robotframework-paylo/examples/)
+[Guía de usuario ↗](https://angel-valdezzz.github.io/robotframework-paylo/es/) · [Referencia de keywords ↗](https://angel-valdezzz.github.io/robotframework-paylo/es/keywords/index.html) · [PyPI ↗](https://pypi.org/project/robotframework-paylo/) · [Ejemplos visuales ↗](https://angel-valdezzz.github.io/robotframework-paylo/es/examples/)
 
 
 ![Python](https://img.shields.io/pypi/pyversions/robotframework-paylo?logo=python)
 ![Robot Framework](https://img.shields.io/badge/Robot_Framework-compatible-00A6A6?logo=robotframework)
 [![License](https://img.shields.io/github/license/angel-valdezzz/robotframework-paylo)](LICENSE)
 
-## Install
+## Instalación
 
 ```bash
 pip install "robotframework-paylo[robot]"
 ```
 
-Python users can install `robotframework-paylo` without the Robot adapter dependencies.
+En Python puedes instalar `robotframework-paylo` sin las dependencias del adaptador Robot.
 
-## Python and Robot Framework
+## Python y Robot Framework
 
 ```python
 from paylo import render_template
@@ -51,6 +51,6 @@ Create A Payload
 ```
 
 
-## Contributing
+## Contribuir
 
-See [CONTRIBUTING.md](CONTRIBUTING.md), [CHANGELOG.md](CHANGELOG.md), and the [development guide ↗](https://angel-valdezzz.github.io/robotframework-paylo/development/).
+Consulta [CONTRIBUTING.md](CONTRIBUTING.md), [CHANGELOG.md](CHANGELOG.md) y la [guía de desarrollo ↗](https://angel-valdezzz.github.io/robotframework-paylo/es/development/).

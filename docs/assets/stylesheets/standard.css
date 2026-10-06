@@ -3,3 +3,5 @@
 .md-typeset h1, .md-typeset h2 { font-weight: 650; letter-spacing: -.02em; }
 .md-typeset .md-button { border-radius: .45rem; }
 .md-typeset table:not([class]) { border-radius: .4rem; overflow: hidden; }
+
+.documentation-language-block{border-left:3px solid var(--md-primary-fg-color);padding:.65rem 1rem;margin:0 0 1.5rem;background:var(--md-code-bg-color);border-radius:.3rem;font-size:.8rem}.documentation-language-block strong{display:block}.documentation-language-block nav a[aria-current]{font-weight:700}.new-tab-hint{font-size:.8em;white-space:nowrap}
