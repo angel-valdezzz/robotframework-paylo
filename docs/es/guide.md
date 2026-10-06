@@ -10,7 +10,7 @@ Para Python puedes instalar `robotframework-paylo` sin las dependencias del adap
 
 ## Python y Robot Framework
 
-```python
+```python hl_lines="4-5 7"
 from paylo import render_template
 
 payload = render_template(
@@ -20,7 +20,7 @@ payload = render_template(
 assert payload == {"name": "Ana", "quantity": 3}
 ```
 
-```robotframework
+```robotframework hl_lines="7-8"
 *** Settings ***
 Library    Paylo
 

@@ -88,3 +88,9 @@
 @media(max-width:600px) {.project-brand img {max-width:290px;}}
 
 .md-typeset img[src*="wordmark"]{max-width:360px;width:100%;}
+
+/* Emphasize the documented operation without hiding syntax or line numbers. */
+.md-typeset .highlight .hll {
+  background-color: color-mix(in srgb, var(--md-typeset-a-color) 15%, var(--md-code-bg-color));
+  box-shadow: inset 3px 0 var(--md-typeset-a-color);
+}

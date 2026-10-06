@@ -12,7 +12,7 @@ Plantillas JSON con variables explícitas, conservación de tipos y errores clar
 
 [English](README.md) · **Español**
 
-[Guía de usuario ↗](https://angel-valdezzz.github.io/robotframework-paylo/es/) · [Referencia de keywords ↗](https://angel-valdezzz.github.io/robotframework-paylo/es/keywords/index.html) · [PyPI ↗](https://pypi.org/project/robotframework-paylo/) · [Ejemplos visuales ↗](https://angel-valdezzz.github.io/robotframework-paylo/es/examples/)
+[Guía de usuario](https://angel-valdezzz.github.io/robotframework-paylo/es/) · [Referencia de keywords](https://angel-valdezzz.github.io/robotframework-paylo/es/keywords/index.html) · [PyPI](https://pypi.org/project/robotframework-paylo/) · [Ejemplos visuales](https://angel-valdezzz.github.io/robotframework-paylo/es/examples/)
 
 
 ![Python](https://img.shields.io/pypi/pyversions/robotframework-paylo?logo=python)
@@ -53,4 +53,4 @@ Create A Payload
 
 ## Contribuir
 
-Consulta [CONTRIBUTING.md](CONTRIBUTING.md), [CHANGELOG.md](CHANGELOG.md) y la [guía de desarrollo ↗](https://angel-valdezzz.github.io/robotframework-paylo/es/development/).
+Consulta [CONTRIBUTING.md](CONTRIBUTING.md), [CHANGELOG.md](CHANGELOG.md) y la [guía de desarrollo](https://angel-valdezzz.github.io/robotframework-paylo/es/development/).
