@@ -1,0 +1,38 @@
+INHERIT: base.yml
+site_description: Documentación técnica de robotframework-paylo para Python y Robot Framework
+site_url: https://angel-valdezzz.github.io/robotframework-paylo/es/
+docs_dir: ../es
+site_dir: ../../build/site-es
+edit_uri: edit/main/docs/es/
+theme:
+  custom_dir: ../overrides
+  language: es
+  palette:
+  - media: '(prefers-color-scheme: light)'
+    scheme: default
+    primary: custom
+    accent: custom
+    toggle:
+      icon: material/weather-night
+      name: Modo oscuro
+  - media: '(prefers-color-scheme: dark)'
+    scheme: slate
+    primary: custom
+    accent: custom
+    toggle:
+      icon: material/weather-sunny
+      name: Modo claro
+plugins:
+  - search:
+      lang: es
+  - git-revision-date-localized:
+      enable_creation_date: false
+      fallback_to_build_date: true
+      locale: es
+      type: datetime
+nav:
+  - Inicio: index.md
+  - Guía de usuario: guide.md
+  - Referencia de keywords: keywords/index.html
+  - Ejemplos visuales: examples.md
+  - Desarrollo y publicación: development.md

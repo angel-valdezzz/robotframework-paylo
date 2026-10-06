@@ -1,0 +1,1 @@
+{"customer":{"name":"{{name}}","email":"{{email}}"},"quantity":"{{quantity}}","reference":"order-{{id}}"}

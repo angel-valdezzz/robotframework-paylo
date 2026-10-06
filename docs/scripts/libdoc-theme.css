@@ -1,0 +1,137 @@
+#libdoc-controls {
+  position:fixed;
+  top:0;
+  right:0;
+  z-index:1001;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:var(--background-color);
+  padding:4px 8px;
+  border-bottom:1px solid var(--border-color)
+}
+
+#libdoc-controls #language-container {
+  position:relative;
+  top:auto;
+  right:auto;
+  width:auto;
+  min-width:max-content;
+  flex:0 0 auto
+}
+
+#libdoc-controls #language-container button {
+  padding:10px 4px;
+  white-space:nowrap;
+  width:auto;
+  height:auto
+}
+
+#libdoc-theme-toggle {
+  font:inherit;
+  padding:7px 10px;
+  border:1px solid var(--border-color);
+  border-radius:6px;
+  cursor:pointer;
+  white-space:nowrap
+}
+
+#libdoc-theme-toggle:focus-visible {
+  outline:2px solid var(--link-color);
+  outline-offset:2px
+}
+
+.libdoc-title {
+  max-width:calc(100% - 330px)
+}
+
+@media(max-width:600px) {
+  #libdoc-controls {
+  top:48px;
+  font-size:12px
+}
+.libdoc-title {
+  max-width:calc(100% - 80px)
+}
+.libdoc-details {
+  margin-top:108px
+}
+
+}
+
+@media print {
+  #libdoc-controls {
+  display:none
+}
+
+}
+
+
+/* Project palette without changing Libdoc's keyword layout or semantics. */
+:root { --brand-primary:#6554C0; --brand-secondary:#226c60; --brand-link:#6554C0; --page-background:#f5f3fc; --background-color:#ffffff; --text-color:#17283d; --border-color:#dbe3ed; --light-background-color:#f5f3fc; --code-background-color:#f4f6fa; --link-color:var(--brand-link); --muted-text-color:#52627a; --less-important-text-color:#52627a; --arg-kind-color:#52627a; --hover-tint:#f5f3fc; }
+:root[data-theme="dark"] { --brand-link:#70e3bd; --page-background:#111b2a; --background-color:#192638; --text-color:#eef3fa; --border-color:#35465f; --light-background-color:#23344b; --code-background-color:#121e30; --link-color:var(--brand-link); --muted-text-color:#b6c5d8; --less-important-text-color:#b6c5d8; --arg-kind-color:#b6c5d8; --hover-tint:#23344b; }
+body {background:var(--page-background);}
+body::before {content:"";position:fixed;inset:0 0 auto;height:54px;background:linear-gradient(115deg,var(--brand-primary),var(--brand-secondary));z-index:1;}
+.libdoc-title {background:transparent;color:white;gap:10px;height:38px;max-width:calc(100% - 330px);z-index:2;}
+.libdoc-title h1 {font-size:1.4rem;color:white;}
+html.scrolled .libdoc-title {max-width:calc(100% - 330px);}
+.libdoc-brand-mark {width:34px;height:34px;flex:none;padding:3px;background:white;border-radius:9px;box-sizing:border-box;}
+#libdoc-controls {background:transparent;border:0;min-height:46px;}
+#libdoc-theme-toggle,#libdoc-controls #language-container button {background:#ffffff18;color:white;border:1px solid #ffffff50;border-radius:7px;}
+#libdoc-controls #language-container ul {background:var(--background-color);border:1px solid var(--border-color);border-radius:8px;box-shadow:0 8px 24px #0003;}
+#libdoc-controls #language-container ul a {color:var(--text-color);}
+.libdoc-overview {background:var(--page-background);}
+.keywords-overview {background:var(--background-color);border-radius:10px;}
+.libdoc-details {background:var(--background-color);border:1px solid var(--border-color);border-radius:12px;margin:70px 16px 20px;padding:20px 24px;}
+.documentation-language-help {border-left-color:var(--brand-link);background:var(--light-background-color);border-radius:5px;}
+@media(max-width:600px) {body::before {height:100px;} .libdoc-title,html.scrolled .libdoc-title {max-width:calc(100% - 80px);} .libdoc-title h1 {font-size:1.1rem;} #libdoc-controls {top:50px;left:0;right:auto;min-height:42px;} .libdoc-details {margin:112px 8px 16px;padding:14px;} .keywords-overview {margin-top:108px;} span.hamburger-menu {background:white;} }
+@media print {body::before,.libdoc-title {display:none;} .libdoc-details {margin:0;border:0;}}
+
+@media(max-width:600px) {.libdoc-title h1,html.scrolled:not(.title-fits) .libdoc-title h1 {font-size:1rem;} .libdoc-title {padding-right:0;} }
+
+/* One opaque header above content, independent of Libdoc version. */
+body::before {display:none;}
+.libdoc-header {position:fixed;inset:0 0 auto;z-index:1100;height:54px;padding:0 8px;display:flex;align-items:center;justify-content:space-between;gap:8px;background:linear-gradient(115deg,var(--brand-primary),var(--brand-secondary));box-sizing:border-box;}
+.libdoc-header .libdoc-title,html.scrolled .libdoc-header .libdoc-title {position:static;display:flex;align-items:center;width:auto;height:54px;margin:0;padding:0;max-width:none;border:0;flex:0 1 auto;gap:10px;box-sizing:border-box;}
+.libdoc-header .libdoc-title h1,html.scrolled:not(.title-fits) .libdoc-header .libdoc-title h1 {display:block;visibility:visible;opacity:1;margin:0;padding:0;font-size:1.25rem;line-height:1.3;color:white;white-space:nowrap;}
+.libdoc-header .libdoc-title {text-decoration:none;}
+.libdoc-header #libdoc-controls {position:static;display:flex;align-items:center;gap:8px;min-height:44px;padding:0;background:transparent;border:0;}
+.libdoc-icon-link,#libdoc-theme-toggle,.libdoc-header #language-container button {display:inline-flex;align-items:center;justify-content:center;position:relative;min-width:40px;width:40px;height:40px;padding:5px;box-sizing:border-box;border:1px solid #ffffff55;border-radius:7px;background:#ffffff12;color:white;cursor:pointer;}
+.libdoc-header #language-container {position:relative;max-width:none;min-width:40px;}
+.libdoc-header #language-container ul {position:absolute;right:0;top:40px;min-width:125px;margin:4px 0;background:var(--background-color);border:1px solid var(--border-color);border-radius:7px;padding:4px;color:var(--text-color);}
+.libdoc-header #language-container ul a {color:var(--text-color);}
+.libdoc-header #language-container svg {width:20px;height:20px;}
+.libdoc-header #language-container button svg path {stroke:white;fill:none;}
+.libdoc-icon-link:hover,#libdoc-theme-toggle:hover,.libdoc-header #language-container button:hover {background:#ffffff30;}
+.libdoc-icon-link:focus-visible,.libdoc-header button:focus-visible {outline:2px solid white;outline-offset:2px;}
+.libdoc-external {position:absolute;right:3px;top:2px;font-size:10px;line-height:1;color:white;}
+.libdoc-sr-only {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+.libdoc-details {scroll-margin-top:66px;}
+.kw-doc,.kw-name,.libdoc-details h2,.libdoc-details h3 {scroll-margin-top:66px;}
+span.hamburger-menu {z-index:1101;}
+.libdoc-code {margin:12px 0;padding:12px;border:1px solid var(--border-color);border-radius:7px;overflow:auto;white-space:pre;font:13px/1.6 ui-monospace,monospace;}
+@media(max-width:800px) {
+ .libdoc-header {height:100px;display:flex;flex-wrap:wrap;align-content:flex-start;justify-content:flex-start;gap:0;}
+ .libdoc-header .libdoc-title,html.scrolled .libdoc-header .libdoc-title {height:50px;width:calc(100% - 48px);max-width:calc(100% - 48px);}
+ .libdoc-header .libdoc-title h1,html.scrolled:not(.title-fits) .libdoc-header .libdoc-title h1 {font-size:1rem;}
+ .libdoc-header #libdoc-controls {height:46px;min-height:46px;width:100%;}
+ .libdoc-details {margin-top:112px;}
+ .kw-doc,.kw-name,.libdoc-details h2,.libdoc-details h3 {scroll-margin-top:112px;}
+ .libdoc-header #language-container ul {right:auto;left:0;}
+}
+@media print {.libdoc-header {display:none;} .libdoc-details {margin:0;}}
+
+/* Keep the guide explicit and the remaining controls compact. */
+.libdoc-header #libdoc-controls {flex:none;}
+.libdoc-header .libdoc-guide-link {width:auto;flex:none;gap:7px;padding:5px 17px 5px 9px;text-decoration:none;}
+.libdoc-guide-label {font:14px/1.2 Arial,sans-serif;white-space:nowrap;}
+.libdoc-icon-link svg,.libdoc-icon-link img,#libdoc-theme-toggle svg {flex:none;}
+@media(max-width:360px) {
+ .libdoc-header {height:148px;}
+ .libdoc-header #libdoc-controls {height:94px;display:grid;grid-template-columns:76px 76px 44px;gap:6px 8px;align-content:start;}
+ .libdoc-header .libdoc-guide-link {grid-column:span 2;}
+ .libdoc-icon-link,#libdoc-theme-toggle,.libdoc-header #language-container button {min-width:44px;width:44px;height:44px;}
+ .libdoc-header #language-container ul {top:44px;}
+ .libdoc-details {margin-top:160px;}
+ .kw-doc,.kw-name,.libdoc-details h2,.libdoc-details h3 {scroll-margin-top:160px;}
+}

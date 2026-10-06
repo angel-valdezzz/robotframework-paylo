@@ -1,0 +1,26 @@
+{
+  "introduction": {
+    "source_sha256": "8a35e964f8058bf7f3ce8588012fd64de08e479c2f65f62565e9f7cad00643e2",
+    "text": "Crea payloads JSON a partir de plantillas y variables explícitas.\n\nImporta con ``Library    Paylo``. Usa ``{{name}}`` para variables y ``{{customer.email}}`` para valores anidados. Si falta una variable se genera un error claro. Las plantillas originales no se modifican y nunca se evalúa código.\n\nEjemplo:\n| ${values}= | Create Dictionary | name=Ana |\n| ${body}= | Render JSON | {\"name\":\"{{name}}\"} | ${values} |"
+  },
+  "keyword:Get Template Variables": {
+    "source_sha256": "d78cbf3865688589b913af59680ab5534d4efac70ed19d8ed5c776467fca582c",
+    "text": "Lista los nombres de variables únicos en orden alfabético; no procesa las claves."
+  },
+  "keyword:Render Json": {
+    "source_sha256": "dd5ac1814109378647cd0f2bdb1575ccad85d2c2a5a1be5eb59081ce402830cf",
+    "text": "Procesa un texto JSON válido y devuelve su diccionario, lista o valor."
+  },
+  "keyword:Render Json File": {
+    "source_sha256": "9653d1b3344b43a74f922a6a978a54b866c0d9021eb73b35c0b749fab59aa0f2",
+    "text": "Lee un archivo JSON UTF-8 y sustituye sus variables explícitas."
+  },
+  "keyword:Render Template": {
+    "source_sha256": "4a0e07ba2390109fcc31d422f1c0067f90bdf218d0a0b402106bf71193fa03ef",
+    "text": "Procesa una plantilla de diccionario/lista y conserva los tipos de los valores JSON."
+  },
+  "keyword:Write Json File": {
+    "source_sha256": "3e3be79465b3bba8b9498ef1d70f642aa6a41d1ecb61d1c87cbf6336d8f195e0",
+    "text": "Guarda JSON en una ruta explícita y devuelve el nombre absoluto del archivo."
+  }
+}
