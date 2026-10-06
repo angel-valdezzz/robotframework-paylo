@@ -12,7 +12,7 @@ Safe JSON templates with explicit variables, preserved value types and clear mis
 
 **English** · [Español](README.es.md)
 
-[User guide ↗](https://angel-valdezzz.github.io/robotframework-paylo/) · [Keyword reference ↗](https://angel-valdezzz.github.io/robotframework-paylo/keywords/index.html) · [PyPI ↗](https://pypi.org/project/robotframework-paylo/) · [Live examples ↗](https://angel-valdezzz.github.io/robotframework-paylo/examples/)
+[User guide](https://angel-valdezzz.github.io/robotframework-paylo/) · [Keyword reference](https://angel-valdezzz.github.io/robotframework-paylo/keywords/index.html) · [PyPI](https://pypi.org/project/robotframework-paylo/) · [Live examples](https://angel-valdezzz.github.io/robotframework-paylo/examples/)
 
 
 ![Python](https://img.shields.io/pypi/pyversions/robotframework-paylo?logo=python)
@@ -53,4 +53,4 @@ Create A Payload
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md), [CHANGELOG.md](CHANGELOG.md), and the [development guide ↗](https://angel-valdezzz.github.io/robotframework-paylo/development/).
+See [CONTRIBUTING.md](CONTRIBUTING.md), [CHANGELOG.md](CHANGELOG.md), and the [development guide](https://angel-valdezzz.github.io/robotframework-paylo/development/).

@@ -4,7 +4,7 @@
 
 Un placeholder que ocupa todo el valor conserva su tipo: números y booleanos llegan al API como números y booleanos.
 
-```python
+```python hl_lines="4-5 7"
 from paylo import render_template
 
 body = render_template(
@@ -22,7 +22,7 @@ assert body == {"name": "Ana", "active": True, "count": 3}
 
 Reutiliza el diccionario de cada iteración; Paylo prepara el payload y RequestsLibrary ejecuta la petición.
 
-```robotframework
+```robotframework hl_lines="7-9"
 *** Settings ***
 Library    Paylo
 
@@ -38,7 +38,7 @@ Create Payload From Data
 
 Una variable ausente genera un error explícito antes de enviar una petición.
 
-```python
+```python hl_lines="4-5"
 from paylo import render_template, MissingVariableError
 
 try:
@@ -51,12 +51,10 @@ except MissingVariableError as error:
 
 ![Paylo](assets/demo/payload-result-es.png)
 
-La captura muestra la entrada y el JSON resultante de la demo. El ejemplo Python de arriba usa el motor real de Paylo.
+Esta captura se genera con el motor Python de Paylo a partir del ejemplo anterior de valores anidados y tipos. Muestra la plantilla, los datos de la iteración y el cuerpo resultante; es independiente de la demo interactiva.
 
 ## Demo interactiva
 
 La demo usa el idioma de esta documentación y permite experimentar con valores. Es una simulación en JavaScript; los ejemplos anteriores ejecutan la librería Python.
-
-[Abrir demo ↗](assets/demo/index.html){ target="_blank" rel="noopener noreferrer" .md-button }
 
 <iframe src="../assets/demo/index.html" title="Paylo demo" style="width:100%;height:780px;border:0;border-radius:12px" loading="lazy"></iframe>
