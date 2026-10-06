@@ -47,7 +47,7 @@ def case_page(language):
     style = (ROOT / "docs/assets/demo/demo.css").read_text()
     style += "main{max-width:960px} .case-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}"
     style += ".output{grid-column:1/-1} pre{margin:0;font-size:15px} .profile{padding:30px 60px}"
-    style += ".profile input{max-width:500px} .profile button{margin-top:20px} .eyebrow{font-weight:700;color:var(--demo-accent)}"
+    style += ".profile input{max-width:500px} .profile button{display:block;margin-top:28px} .eyebrow{font-weight:700;color:var(--demo-accent)}"
     if PROJECT.endswith("paylo"):
         from paylo import render_template
 
@@ -61,8 +61,9 @@ def case_page(language):
             else ["Template", "Iteration data", "API request body"]
         )
         blocks = []
-        formatter = HtmlFormatter(nowrap=True, hl_lines=[3, 4])
+        focus_lines = ([2, 3, 4], [3, 5, 6], [2, 3, 4])
         for index, (label, data) in enumerate(zip(labels, [template, values, result])):
+            formatter = HtmlFormatter(nowrap=True, hl_lines=focus_lines[index])
             code = highlight(json.dumps(data, indent=2), JsonLexer(), formatter)
             blocks.append(
                 f'<section class="panel {"output" if index == 2 else ""}"><h2>{label}</h2><pre><code>{code}</code></pre></section>'
@@ -175,6 +176,16 @@ with serve() as base, webdriver.Chrome(options=options) as browser:
         validate_demo(browser, language)
         (directory / "case.html").write_text(case_page(language))
         browser.get(f"{base}/{language}/case.html")
+        # Fit the complete use case inside one viewport; never stitch or crop.
+        geometry = browser.execute_script(
+            "return {height:Math.ceil(document.querySelector('main').getBoundingClientRect().bottom"
+            "+parseFloat(getComputedStyle(document.body).paddingBottom)),"
+            "chrome:outerHeight-innerHeight};"
+        )
+        browser.set_window_size(1100, geometry["height"] + geometry["chrome"])
+        assert browser.execute_script(
+            "return document.querySelector('main').getBoundingClientRect().bottom <= innerHeight"
+        )
         if PROJECT.endswith("marka"):
             from marka import Annotator
 
@@ -197,6 +208,12 @@ with serve() as base, webdriver.Chrome(options=options) as browser:
                 color="#567344",
                 position="right",
                 text_color="white",
+            )
+            # The second step must not overlap the email field.
+            assert browser.execute_script(
+                "const email=document.getElementById('email').getBoundingClientRect();"
+                "const dot=[...document.querySelectorAll('[data-marka-id]')]"
+                ".find(n=>n.textContent==='2').getBoundingClientRect();return dot.top>email.bottom;"
             )
             save.click()
             assert browser.find_element(By.ID, "notice").text == (
