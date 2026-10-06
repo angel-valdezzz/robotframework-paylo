@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+site/
+build/
+dist/
+output/
+docs/en/assets/
+docs/es/assets/
+docs/en/keywords/
+docs/es/keywords/
