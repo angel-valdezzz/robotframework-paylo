@@ -9,10 +9,13 @@ Safe JSON templates with explicit variables, preserved value types and clear mis
 
 [![CI](https://github.com/angel-valdezzz/robotframework-paylo/actions/workflows/ci.yml/badge.svg)](https://github.com/angel-valdezzz/robotframework-paylo/actions/workflows/ci.yml)
 [![PyPI](https://img.shields.io/pypi/v/robotframework-paylo)](https://pypi.org/project/robotframework-paylo/)
-![Python](https://img.shields.io/badge/python-3.10%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 [User guide](https://angel-valdezzz.github.io/robotframework-paylo/) · [Guía en español](https://angel-valdezzz.github.io/robotframework-paylo/es/) · [Keyword reference ↗](https://angel-valdezzz.github.io/robotframework-paylo/keywords/index.html) · [PyPI](https://pypi.org/project/robotframework-paylo/) · [Live examples](https://angel-valdezzz.github.io/robotframework-paylo/examples/)
+
+
+![Python](https://img.shields.io/pypi/pyversions/robotframework-paylo?logo=python)
+![Robot Framework](https://img.shields.io/badge/Robot_Framework-compatible-00A6A6?logo=robotframework)
+[![License](https://img.shields.io/github/license/angel-valdezzz/robotframework-paylo)](LICENSE)
 
 ## Install
 
