@@ -6,6 +6,7 @@ from pathlib import Path
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.color import Color
 from selenium.webdriver.support.ui import WebDriverWait
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -14,7 +15,6 @@ options = webdriver.ChromeOptions()
 options.add_argument("--headless=new")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
-options.add_argument("--allow-file-access-from-files")
 with webdriver.Chrome(options=options) as browser:
     browser.set_window_size(1200, 1200)
     for language in ("en", "es"):
@@ -39,8 +39,8 @@ with webdriver.Chrome(options=options) as browser:
             )
             style = browser.find_element(By.CSS_SELECTOR, "[data-marka-id]").value_of_css_property
             assert style("border-top-width") == "5px"
-            assert style("border-top-color") == "rgb(38, 115, 217)"
-            assert "38, 115, 217" in style("background-color")
+            assert Color.from_string(style("border-top-color")).hex == "#2673d9"
+            assert Color.from_string(style("background-color")).hex == "#2673d9"
             gap = browser.execute_script(
                 "const target=document.getElementById('email').getBoundingClientRect();"
                 "const dot=[...document.querySelectorAll('[data-marka-id]')]"

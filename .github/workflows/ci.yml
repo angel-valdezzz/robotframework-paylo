@@ -27,6 +27,11 @@ jobs:
       - run: robot --outputdir output examples/quickstart.robot
       - run: python docs/scripts/generate_demo_screenshots.py
       - run: python docs/scripts/build_docs.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: documentation-preview-${{ matrix.python }}
+          path: site/
+          retention-days: 1
       - run: poetry build
       - run: twine check dist/*
       - run: python scripts/wheel_smoke.py
