@@ -49,6 +49,8 @@ except MissingVariableError as error:
 
 ## Result screenshot
 
+![Paylo](assets/demo/payload-result-en.png)
+
 The screenshot shows the demo input and rendered JSON. The Python example above uses the real Paylo engine.
 
 ## Interactive demo
