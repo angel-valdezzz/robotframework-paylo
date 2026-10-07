@@ -38,7 +38,7 @@ description: Construye payloads JSON con variables explícitas. Conserva sus tip
 
 ```mermaid
 flowchart TD
-    T[JSON template] --> R[Paylo]
+    T[Plantilla JSON] --> R[Paylo]
     V[Variables] --> R
-    R --> P[Typed JSON payload]
+    R --> P[Payload JSON tipado]
 ```
