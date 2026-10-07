@@ -1,15 +1,26 @@
-<div class="hero" markdown>
+---
+template: home.html
+title: Paylo
+description: Construye payloads JSON con variables explícitas. Conserva sus tipos, reutiliza tus datos de prueba y entiende cada sustitución.
+---
 
-![Paylo](assets/wordmark-light.svg#only-light)
-![Paylo](assets/wordmark-dark.svg#only-dark)
+<div id="overview"></div>
 
-# Paylo
+## De una plantilla a un payload
 
-Plantillas JSON seguras con variables explícitas, tipos de datos conservados y errores claros cuando falta una variable.
+<div class="grid cards" markdown>
 
-[Comenzar](guide.md){ .md-button .md-button--primary }
-[Referencia de keywords](keywords/index.html){ .md-button }
-[Ejemplos en vivo](examples.md){ .md-button }
+- **01 · Plantilla**
+
+    Define placeholders dentro de un JSON válido.
+
+- **02 · Variables**
+
+    Proporciona diccionarios explícitos con tus datos de prueba.
+
+- **03 · Payload**
+
+    Recibe valores JSON con sus tipos originales.
 
 </div>
 
@@ -20,3 +31,14 @@ Plantillas JSON seguras con variables explícitas, tipos de datos conservados y 
 - Completa valores JSON anidados con variables `{{name}}`.
 - Conserva números, booleanos, nulos, listas y objetos.
 - Reutiliza diccionarios de pytest, Robot o Pytabify; no envía peticiones HTTP.
+
+## Pruébalo con tus datos
+
+[Abre el ejemplo interactivo](assets/demo/index.html) y edita la plantilla y las variables.
+
+```mermaid
+flowchart TD
+    T[JSON template] --> R[Paylo]
+    V[Variables] --> R
+    R --> P[Typed JSON payload]
+```

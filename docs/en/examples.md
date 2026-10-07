@@ -1,3 +1,8 @@
+---
+tags:
+  - Usage
+---
+
 # Visual examples
 
 ## Preserve types and resolve nested values
