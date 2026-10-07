@@ -14,6 +14,11 @@ theme:
   icon:
     repo: fontawesome/brands/github
   features:
+    - navigation.instant.prefetch
+    - navigation.instant.preview
+    - content.code.annotate
+    - content.code.select
+    - content.tooltips
     - navigation.instant
     - navigation.instant.progress
     - navigation.tabs
@@ -57,6 +62,9 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - tables
+  - abbr
+  - footnotes
+  - pymdownx.snippets
   - toc:
       permalink: true
   - pymdownx.details
@@ -78,13 +86,23 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra_css:
+  - assets/stylesheets/landing.css
   - assets/stylesheets/standard.css
   - assets/stylesheets/visual.css
 
 extra_javascript:
+  - assets/mermaid.min.js
+  - assets/landing.js
   - assets/keyword-links.js
 
 extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/angel-valdezzz/robotframework-paylo
+      name: Paylo on GitHub
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/robotframework-paylo/
+      name: Paylo on PyPI
   generator: false
   alternate:
     - name: English

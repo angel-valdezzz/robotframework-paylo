@@ -1,3 +1,8 @@
+---
+tags:
+  - Uso
+---
+
 # Ejemplos visuales
 
 ## Conservar tipos y resolver rutas anidadas

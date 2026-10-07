@@ -1,3 +1,8 @@
+---
+tags:
+  - Usage
+---
+
 # User guide
 
 ## Install

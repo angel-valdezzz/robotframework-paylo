@@ -29,8 +29,18 @@ plugins:
       fallback_to_build_date: true
       locale: en
       type: datetime
+  - tags
+  - social:
+      cards_layout_options:
+        background_color: "#101629"
+        color: "#eef2ff"
+        font_family: DejaVu Sans
+  - privacy:
+      assets_exclude:
+        - unpkg.com/mermaid@11/*
 nav:
   - Home: index.md
+  - Browse by topic: topics.md
   - User guide: guide.md
   - Keyword reference: keywords/index.html
   - Visual examples: examples.md

@@ -16,3 +16,6 @@ docs/es/keywords/
 
 docs/assets/demo/*-en.png
 docs/assets/demo/*-es.png
+
+.cache/
+docs/config/.cache/
