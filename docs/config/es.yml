@@ -46,3 +46,6 @@ nav:
   - Referencia de keywords: keywords/index.html
   - Ejemplos visuales: examples.md
   - Desarrollo y publicación: development.md
+
+hooks:
+  - ../scripts/navigation.py

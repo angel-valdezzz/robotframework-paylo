@@ -91,11 +91,13 @@ extra_css:
   - assets/stylesheets/visual.css
 
 extra_javascript:
+  - assets/navigation.js?v=locale-3
   - assets/mermaid.min.js
   - assets/landing.js
   - assets/keyword-links.js
 
 extra:
+  scope: /robotframework-paylo/
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/angel-valdezzz/robotframework-paylo
@@ -111,3 +113,6 @@ extra:
     - name: Español
       link: https://angel-valdezzz.github.io/robotframework-paylo/es/
       lang: es
+
+hooks:
+  - docs/scripts/navigation.py
