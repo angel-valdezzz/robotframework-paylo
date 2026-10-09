@@ -79,6 +79,9 @@ def check_navigation(browser, base, output):
         Math.abs(h.getAnimations()[0].currentTime-t.getAnimations()[0].currentTime)<1;
     }""")
     page.screenshot(path=str(output / "docs-es-header.png"))
+    assert page.locator(".md-logo img").first.evaluate(
+        "el=>getComputedStyle(el).filter==='brightness(0) invert(1)'"
+    )
     page.locator(".md-logo").first.click()
     expect(page.locator("#pl-pause")).to_be_visible()
     assert page.locator("[data-pl-hero]").get_attribute("data-lang") == "es"

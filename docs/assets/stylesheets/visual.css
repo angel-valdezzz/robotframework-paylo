@@ -96,3 +96,5 @@
 }
 
 body:not(:has([data-pl-hero])) :is(.md-header,.md-tabs){background:linear-gradient(90deg,#6554c0 0%,#37685e 48%,#525397 75%,#6554c0 100%);background-size:260% 100%;animation:pl-header-flow 32s ease-in-out infinite}@keyframes pl-header-flow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}@media(prefers-reduced-motion:reduce){.md-header,.md-tabs{animation:none!important}}
+/* A white silhouette keeps the same transparent mark legible on the docs gradient. */
+body:not(:has([data-pl-hero])) .md-header__button.md-logo img{filter:brightness(0) invert(1)}
