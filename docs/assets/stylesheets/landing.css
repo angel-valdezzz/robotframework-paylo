@@ -45,3 +45,20 @@ body:has([data-pl-hero]) .md-search{position:static;width:0;height:0;padding:0}
 .pl-hero,.pl-explanation{width:min(1420px,90%);margin-left:auto;margin-right:auto}body:has([data-pl-hero]) .md-main{background:#151521}body:has([data-pl-hero]) .md-main__inner{max-width:none}.pl-reference-content{width:min(90%,64rem);margin:auto;padding:32px;background:var(--md-default-bg-color)}.md-typeset .pl-explanation :is(h2,h3){color:var(--paper)}.md-typeset .pl-explanation h2{font-weight:700}.pl-type-list>div.pl-active{color:var(--mint);text-shadow:0 0 14px #64d8ba80}@media(max-width:760px){.pl-type-mobile{position:absolute;right:4px;top:3px;margin:0}.pl-reference-content{padding:20px}.pl-json-row.pl-done .pl-type-mobile{color:var(--mint)}}
 
 .pl-hero a.pl-primary{color:#10241f}
+/* Compact laptop view: keep the action and scroll cue inside the first screen. */
+@media(min-width:1050px) and (max-height:760px){
+ .pl-hero{padding:90px 0 12px;min-height:100svh}
+ .pl-edition{padding-bottom:8px;font-size:9px}
+ .pl-intro{padding:12px 0}.pl-intro h1{font-size:40px}
+ .pl-assembly{padding-top:12px}.pl-column-head{font-size:9px;line-height:12px}
+ .pl-assembly-body{padding:8px 0}
+ .pl-variables,.pl-type-list{padding-top:18px;padding-bottom:18px}
+ .pl-brace{height:18px;line-height:18px;font-size:20px}
+ .pl-json-row,.pl-input-row,.pl-type-list>div{height:34px}
+ .pl-assembly-foot{padding:10px 0}
+ .pl-notation{margin-top:12px;font-size:10px;line-height:16px}
+ .pl-hero-bottom{padding-top:12px}.pl-scroll-circle{width:32px;height:32px}
+ body:has([data-pl-hero]) .md-header__inner{height:82px}
+}
+.pl-value.pl-placeholder{color:#9890ab}.pl-type-list>div{color:#9890ab}.pl-hero-caption{color:#9691a6}.pl-punctuation,.pl-comma{color:#9e97aa}
+.pl-hero[data-pl-paused] .pl-received{animation-play-state:paused}

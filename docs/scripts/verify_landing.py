@@ -142,6 +142,7 @@ def main():
                     assert page.locator(".md-select button").evaluate(
                         "el=>el.getBoundingClientRect().right<=document.querySelector('.pl-search-trigger').getBoundingClientRect().left"
                     )
+                    page.screenshot(path=str(output / f"{locale}-{width}-{height}-initial.png"))
                     if width >= 1100:
                         assert page.locator(".pl-primary,.pl-scroll").evaluate_all(
                             "els=>els.every(el=>{const r=el.getBoundingClientRect();return r.top>=0 && r.bottom<=innerHeight;})"
