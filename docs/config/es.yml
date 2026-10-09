@@ -49,3 +49,4 @@ nav:
 
 hooks:
   - ../scripts/navigation.py
+  - ../scripts/asset_versions.py

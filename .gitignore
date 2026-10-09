@@ -19,3 +19,4 @@ docs/assets/demo/*-es.png
 
 .cache/
 docs/config/.cache/
+docs/assets/landing-scenarios.json

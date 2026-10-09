@@ -1,44 +1,21 @@
 ---
 template: home.html
 title: Paylo
-description: Build JSON payloads from explicit variables. Keep their types, reuse your test data and understand every substitution.
+description: Safe JSON templates with explicit variables and preserved value types.
 ---
 
-<div id="overview"></div>
+## From a template to your tests
 
-## From a template to a payload
+```python hl_lines="4-8"
+from paylo import render_template
 
-<div class="grid cards" markdown>
-
-- **01 · Template**
-
-    Define placeholders in valid JSON.
-
-- **02 · Variables**
-
-    Supply explicit dictionaries from your test data.
-
-- **03 · Payload**
-
-    Receive JSON values with their original types.
-
-</div>
-
-Use it from Python or Robot Framework with the same behavior. MIT licensed, with source and executable examples on GitHub.
-
-## What it does
-
-- Fill nested JSON values with `{{name}}` placeholders.
-- Keep numbers, booleans, nulls, arrays and objects as their real types.
-- Reuse dictionaries from pytest, Robot or Pytabify; no network requests are sent.
-
-## Try it with your data
-
-[Open the interactive example](assets/demo/index.html) and edit the template and variables.
-
-```mermaid
-flowchart TD
-    T[JSON template] --> R[Paylo]
-    V[Variables] --> R
-    R --> P[Typed JSON payload]
+payload = render_template(
+    {"name": "{{customer.name}}", "quantity": "{{quantity}}", "active": "{{active}}"},
+    {"customer": {"name": "Ana"}, "quantity": 3, "active": True},
+)
+assert payload == {"name": "Ana", "quantity": 3, "active": True}
 ```
+
+The result retains the string, number and boolean. No HTTP request is sent.
+
+[User guide](guide.md) · [Complete examples](examples.md)

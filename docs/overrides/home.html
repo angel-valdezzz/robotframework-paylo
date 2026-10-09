@@ -1,33 +1,44 @@
 {% extends "main.html" %}
+{% set es = config.theme.language == "es" %}
 {% block tabs %}
 {{ super() }}
-{% set es = config.theme.language == 'es' %}
-<section class="er-hero" aria-labelledby="er-headline" data-er-hero data-lang="{{ config.theme.language }}" data-accent="192,173,255" data-secondary="132,229,220" style="--scene-accent:#c0adff;--scene-secondary:#84e5dc">
-  <canvas class="er-field" aria-hidden="true"></canvas>
-  <div class="er-hero-inner">
-    <div class="er-hero-copy">
-      <div class="er-kicker">PYTHON <span> / </span> ROBOT FRAMEWORK</div>
-      <h1 id="er-headline">{{ 'Plantillas reutilizables.<br><em>Valores reales.</em>' if es else 'Reusable templates.<br><em>Real values.</em>' }}</h1>
-      <p>{{ 'Construye payloads JSON con variables explícitas. Conserva sus tipos, reutiliza tus datos de prueba y entiende cada sustitución.' if es else 'Build JSON payloads from explicit variables. Keep their types, reuse your test data and understand every substitution.' }}</p>
-      <div class="er-actions">
-        <a class="er-action er-action-primary" href="{{ 'guide/' | url }}">{{ 'Comenzar' if es else 'Get started' }} <span aria-hidden="true">→</span></a>
-        <a class="er-action er-action-secondary" href="{{ 'assets/demo/index.html' | url }}">{{ 'Explorar el ejemplo' if es else 'Explore the example' }} <span aria-hidden="true">→</span></a>
+<section class="pl-hero" data-pl-hero data-scenarios-url="{{ 'assets/landing-scenarios.json' | url }}" data-lang="{{ config.theme.language }}" id="pl-home" aria-labelledby="pl-headline">
+      <div class="pl-edition"><span>JSON TEMPLATING</span><span>PYTHON <i>·</i> ROBOT FRAMEWORK</span><span class="pl-edition-note" >{{ 'PAYLO / PLANTILLA VIVA' if es else 'PAYLO / LIVING TEMPLATE' }}</span></div>
+      <div class="pl-intro">
+        <h1 id="pl-headline"><span>{{ 'La estructura, tuya.' if es else 'Your structure.' }}</span><br><em>{{ 'Los datos, variables.' if es else 'Variable by nature.' }}</em></h1>
+        <div class="pl-intro-copy"><p>{{ 'Prepara payloads JSON con variables explícitas. Cambia los datos, conserva su tipo y reutiliza la plantilla.' if es else 'Build JSON payloads with explicit variables. Change the data, preserve its type and reuse your template.' }}</p><a class="pl-primary" href="{{ 'guide/' | url }}"><span>{{ 'Comenzar' if es else 'Get started' }}</span><span aria-hidden="true">↗</span></a></div>
       </div>
-      <div class="er-facts"><span>JSON · Python · Robot</span><span>{{ 'Abierto y gratuito' if es else 'Open source & free' }}</span></div>
-    </div>
-    <div class="er-report-scene" aria-label="{{ 'Animación ilustrativa con datos ficticios' if es else 'Illustrative animation with fictitious data' }}">
-      <div class="er-scene-caption"><span class="er-live-dot"></span>{{ 'DE LOS DATOS AL RESULTADO' if es else 'FROM INPUT TO INSIGHT' }}</div>
-      <div class="er-preview">
-        <div class="er-scene-title"><img src="{{ 'assets/logo.svg' | url }}" alt=""><strong>Paylo</strong></div>
-        <div class="er-preview-body"><div class="er-scene-row er-assemble" data-stage="1"><strong>{{ 'Template' if not es else 'Plantilla' }}</strong><br><code>{"name": "&#123;&#123;name&#125;&#125;",<br> "quantity": "&#123;&#123;quantity&#125;&#125;"}</code></div>
-<div class="er-scene-row er-assemble" data-stage="2"><strong>{{ 'Variables' if not es else 'Variables' }}</strong><br><code>{"name": <span class="er-value">"Ana"</span>, "quantity": <span class="er-value">3</span>}</code></div>
-<div class="er-scene-row er-assemble" data-stage="3"><strong>render_template</strong><br><span class="er-muted">{{ 'Resolve explicit values' if not es else 'Resuelve valores explícitos' }}</span></div>
-<div class="er-scene-row er-assemble" data-stage="4"><code>{"name": <span class="er-value">"Ana"</span>, "quantity": <span class="er-value">3</span>}</code><br><span class="er-value">✓</span> {{ 'Number preserved' if not es else 'Número preservado' }}</div></div>
+      <div class="pl-assembly" aria-label="{{ 'Visualización de sustitución de variables' if es else 'Variable substitution visualization' }}">
+        <div class="pl-column-head"><span>{{ '01 / VARIABLES' if es else '01 / VARIABLES' }}</span><span class="pl-payload-label" >{{ '02 / TU PLANTILLA' if es else '02 / YOUR TEMPLATE' }}</span><span>{{ 'TIPO ORIGINAL' if es else 'ORIGINAL TYPE' }}</span></div>
+        <div class="pl-assembly-body">
+          <div class="pl-variables">
+            <div class="pl-input-row" data-pl-input="0"><span class="pl-variable-name">customer.name</span><span class="pl-source-value pl-string" data-pl-source="0">"Ana"</span></div>
+            <div class="pl-input-row" data-pl-input="1"><span class="pl-variable-name">quantity</span><span class="pl-source-value pl-number" data-pl-source="1">3</span></div>
+            <div class="pl-input-row" data-pl-input="2"><span class="pl-variable-name">active</span><span class="pl-source-value pl-boolean" data-pl-source="2">true</span></div>
+          </div>
+          <div class="pl-object"><span class="pl-brace pl-open" aria-hidden="true">{</span>
+            <div class="pl-json-row" data-pl-row="0"><span class="pl-key">"name"<span class="pl-punctuation">:</span></span><span class="pl-value pl-placeholder" data-pl-value="0">"&#123;&#123;customer.name&#125;&#125;"</span><span class="pl-comma">,</span><span class="pl-type-mobile" aria-hidden="true">string</span></div>
+            <div class="pl-json-row" data-pl-row="1"><span class="pl-key">"quantity"<span class="pl-punctuation">:</span></span><span class="pl-value pl-placeholder" data-pl-value="1">"&#123;&#123;quantity&#125;&#125;"</span><span class="pl-comma">,</span><span class="pl-type-mobile" aria-hidden="true">number</span></div>
+            <div class="pl-json-row" data-pl-row="2"><span class="pl-key">"active"<span class="pl-punctuation">:</span></span><span class="pl-value pl-placeholder" data-pl-value="2">"&#123;&#123;active&#125;&#125;"</span><span class="pl-type-mobile" aria-hidden="true">boolean</span></div>
+            <span class="pl-brace pl-close" aria-hidden="true">}</span>
+          </div>
+          <div class="pl-type-list"><div data-pl-type="0">string <span>↳</span></div><div data-pl-type="1">number <span>↳</span></div><div data-pl-type="2">boolean <span>↳</span></div></div>
+        </div>
+        <div class="pl-assembly-foot"><div class="pl-scenario"><span>{{ 'ESCENARIO' if es else 'SCENARIO' }}</span><span id="pl-scenario-number">01</span><span class="pl-scenario-rule"></span><span id="pl-scenario-name">Ana</span></div><span id="pl-step-caption" >{{ 'Una estructura. Datos que cambian.' if es else 'One structure. Changing data.' }}</span><span class="pl-state"><span id="pl-state-dot"></span><span id="pl-state-label" >{{ 'Sustituyendo' if es else 'Substituting' }}</span></span></div>
+        <div id="pl-traveler" aria-hidden="true" hidden></div>
       </div>
-      <div class="er-scene-footer"><span>{{ 'Ilustración · datos ficticios' if es else 'Illustration · fictitious data' }}</span><div class="er-animation-controls" hidden><button type="button" data-er-pause aria-pressed="false">{{ 'Pausar' if es else 'Pause' }}</button><button type="button" data-er-replay>{{ 'Repetir' if es else 'Replay' }}</button></div></div>
-    </div>
-  </div>
-  <a class="er-scroll" href="#overview">{{ 'Descubre lo que puedes crear' if es else 'Discover what you can create' }} <span aria-hidden="true">↓</span></a>
-</section>
+      <p class="pl-notation"><code>customer.name</code> {{ "accede al campo name dentro de customer. El placeholder completo conserva el tipo del valor." if es else "accesses the name field inside customer. A full-value placeholder preserves the value’s type." }}</p>
+      <div class="pl-hero-bottom"><a class="pl-scroll" href="#overview"><span class="pl-scroll-circle" aria-hidden="true">↓</span><span>{{ 'Descubre cómo funciona' if es else 'Discover how it works' }}</span></a><span class="pl-hero-caption" >{{ 'LA FORMA PERMANECE. EL CONTENIDO EVOLUCIONA.' if es else 'THE SHAPE REMAINS. THE CONTENT EVOLVES.' }}</span><button class="pl-pause" id="pl-pause" aria-pressed="false" hidden><span aria-hidden="true">Ⅱ</span><span>{{ 'Pausar' if es else 'Pause' }}</span></button></div>
+    </section>
+
 {% endblock %}
-{% block content %}<div class="er-home-content">{{ page.content }}</div>{% endblock %}
+{% block content %}
+<section class="pl-explanation" id="overview" tabindex="-1" aria-labelledby="pl-how-title">
+      <div class="pl-section-label" >{{ 'MENOS REPETICIÓN, MÁS CONTROL' if es else 'LESS REPETITION, MORE CONTROL' }}</div>
+      <div class="pl-explanation-intro"><h2 id="pl-how-title">{{ 'Define una vez.' if es else 'Define it once.' }}<br>{{ 'Cambia lo necesario.' if es else 'Change what matters.' }}</h2><p>{{ 'Paylo sustituye valores dentro de JSON válido. Tú decides qué datos entran; la estructura no tiene que volver a escribirse para cada escenario de prueba.' if es else 'Paylo substitutes values inside valid JSON. You decide which data goes in; the structure does not need to be rewritten for every test scenario.' }}</p></div>
+      <div class="pl-principles"><article><span class="pl-principle-number">01</span><h3>{{ 'Variables explícitas.' if es else 'Explicit variables.' }}</h3><p>{{ 'Diccionarios de Python o datos de Robot Framework. Sin lecturas implícitas del entorno.' if es else 'Python dictionaries or Robot Framework data. No implicit environment reads.' }}</p></article><article><span class="pl-principle-number">02</span><h3>{{ 'Tipos que se conservan.' if es else 'Types stay intact.' }}</h3><p>{{ 'Un número sigue siendo un número. También booleanos, listas, objetos y null cuando ocupan el valor completo.' if es else 'A number stays a number. Booleans, lists, objects and null retain their types when they occupy the entire value.' }}</p></article><article><span class="pl-principle-number">03</span><h3>{{ 'Errores claros.' if es else 'Clear errors.' }}</h3><p>{{ 'Si falta una variable, Paylo lo indica. Los valores no se ejecutan ni se expanden otra vez.' if es else 'Paylo tells you when a variable is missing. Values are neither executed nor expanded again.' }}</p></article></div>
+      <div class="pl-example-link"><div><span class="pl-section-label" >{{ 'DE LA VISUALIZACIÓN AL USO REAL' if es else 'FROM VISUALIZATION TO REAL USE' }}</span><h3>{{ 'Prueba tu propia plantilla.' if es else 'Try your own template.' }}</h3><p>{{ 'Edita el JSON y las variables en el ejemplo interactivo de la documentación.' if es else 'Edit the JSON and variables in the interactive documentation example.' }}</p></div><a class="pl-secondary" href="{{ 'assets/demo/index.html' | url }}"><span>{{ 'Abrir el ejemplo' if es else 'Open the example' }}</span><span aria-hidden="true">↗</span></a></div>
+    </section>
+
+<div class="pl-reference-content">{{ page.content }}</div>
+{% endblock %}

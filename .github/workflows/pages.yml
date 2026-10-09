@@ -8,6 +8,8 @@ permissions:
 concurrency:
   group: pages
   cancel-in-progress: true
+env:
+  SE_AVOID_STATS: "true"
 jobs:
   build:
     runs-on: ubuntu-latest

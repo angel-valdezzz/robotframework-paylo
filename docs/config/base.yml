@@ -116,3 +116,4 @@ extra:
 
 hooks:
   - docs/scripts/navigation.py
+  - docs/scripts/asset_versions.py
