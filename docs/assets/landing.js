@@ -43,6 +43,9 @@
       startFont,endFont};
   }
   function render() {
+    // Reconcile every frame as well as on the media event: the preference can
+    // change while Material retains the page or while motion is paused.
+    pause.disabled = reduced.matches;
     if (!data) return;
     const cycle = 10900;
     const scenarioIndex = reduced.matches ? 0 : Math.floor(elapsed/cycle)%data.scenarios.length;

@@ -62,3 +62,4 @@ body:has([data-pl-hero]) .md-search{position:static;width:0;height:0;padding:0}
 }
 .pl-value.pl-placeholder{color:#9890ab}.pl-type-list>div{color:#9890ab}.pl-hero-caption{color:#9691a6}.pl-punctuation,.pl-comma{color:#9e97aa}
 .pl-hero[data-pl-paused] .pl-received{animation-play-state:paused}
+.pl-hero .pl-pause{font:400 11px/1.6 Inter,Arial,sans-serif}
