@@ -84,7 +84,7 @@
 .project-brand .project-brand-dark {display:none;}
 [data-md-color-scheme="slate"] .project-brand .project-brand-light {display:none;}
 [data-md-color-scheme="slate"] .project-brand .project-brand-dark {display:block;}
-.md-header__button.md-logo img {width:1.5rem;height:1.5rem;background:white;border-radius:6px;padding:2px;box-sizing:border-box;}
+.md-header__button.md-logo img {width:1.5rem;height:1.5rem;background:transparent;border-radius:0;padding:0;box-sizing:border-box;}
 @media(max-width:600px) {.project-brand img {max-width:290px;}}
 
 .md-typeset img[src*="wordmark"]{max-width:360px;width:100%;}
@@ -94,3 +94,5 @@
   background-color: color-mix(in srgb, var(--md-typeset-a-color) 15%, var(--md-code-bg-color));
   box-shadow: inset 3px 0 var(--md-typeset-a-color);
 }
+
+body:not(:has([data-pl-hero])) :is(.md-header,.md-tabs){background:linear-gradient(90deg,#6554c0 0%,#37685e 48%,#525397 75%,#6554c0 100%);background-size:260% 100%;animation:pl-header-flow 32s ease-in-out infinite}@keyframes pl-header-flow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}@media(prefers-reduced-motion:reduce){.md-header,.md-tabs{animation:none!important}}

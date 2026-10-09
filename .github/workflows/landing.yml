@@ -6,6 +6,8 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+env:
+  SE_AVOID_STATS: "true"
 jobs:
   landing:
     runs-on: ubuntu-latest
